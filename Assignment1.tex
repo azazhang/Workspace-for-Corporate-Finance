@@ -5,6 +5,7 @@
 \usepackage{fullpage}
 \usepackage{csvsimple}
 \usepackage{setspace}
+\usepackage{graphicx}
 
 \title{FIN9013 Assignment 1}
 \author{Ang Zhang}
@@ -14,6 +15,22 @@
 
 \onehalfspacing
 
+\section*{Introduction}
+This report examines the determinants of the debt ratio of firms using a panel data of 16,257 observations.
+The data management step processed the data by defining the dependent variable, $Debt$, as the total debt over total book asset.
+The independent variables include the logarithm of annual sales turnover, $Size$, the market to book ratio of assets, $MB$,
+and a dummy variable indicating whether the firm has R\&D spending, $D(RD)$.
+Varies models, including linear models and discrete choice models are used to examine the relationshio.
+To account for the potential endogeneity of the MB variable, instrument variables is introduced and
+validated through two stage LS. Then, panel data estimation is performed to account for
+heterogeneity (potential correlation between the error terms across firms/years).
+
+Moving on, treatment effect is studied with DD analysis to examine a shock to a subset of the firms 
+located in a specific region. Matching model is also used to estimate the treatment effect which shows similar results.
+
+The report is organized as follows: Table 1 in appendix presents summary statistics for the variables used in the analysis.
+Each section presents the results of the different models used in the analysis, with detailed results
+presented in tables in the appendix.
 
 \section*{Linear regression, interactions, split-samples and non-linearities}
 
@@ -53,7 +70,69 @@ estimates for the four categorical variables are quite different. Also, the
 
 \section*{Discrete choice variables and censoring}
 
+The Python statsmodel package does not support the estimation of a Tobit model, so I manually defined a class to estimate the Tobit model.
+The model class inherits from the statsmodel GLM class, and the log-likelihood function is defined as the sum of the log-likelihood of the
+censored and uncensored observations. 
+The discrete choice model built-in the statsmodel package do offer a marginal effect function (get\_margeff) to calculate the
+marginal effect of the independent variables. But the question with this package is that it cannot account for interaction terms.
+The reason is that in statsmodel package, the model takes each interaction term as a separate variable, so the marginal effect
+function cannot calculate the marginal effect of the interaction term. But for logit model, the marginal effect can be calculated
+manually by taking the derivative of the probability function with respect to the independent variable and there's a closed-form solution as below:
+\begin{equation}
+    \frac{\partial P(Debt|D(RD))}{\partial D(RD)} = (\beta_{rd} + \beta_{mbrd} MB ) \cdot P(y=1|x) \cdot (1-P(y=1|x))
+\end{equation}
+where $P(y=1|x)$ is the estimated logic probability, at the point where the marginal effect is to be calculated. 
+
+
 \section*{Instrumental variables}
+For an instrument to be valid, it must be correlated with the endogenous variable, $MB$, 
+but uncorrelated with the error term. The first assumption is tested by regressing $MB$ on the instrument and look at the statistics
+including R-squared and F-statistics. But the second assumption cannot be tested directly, because the endogenous variable 
+have distorted the error term so that the error term is no longer a "real" error term.
+But we can use economecal intuition to think about whether the instrument is likely to be correlated with the error term.
+Heuristically, which month did the firm go public is unlikely to be correlated with the debt ratio, because the month of the IPO
+is unlikely to have any effect on the how much debt the firm decides to take on.
+But a firm that goes public in December may face significantly different market conditions
+when many investors are on vacation, thus may experience a dip in their valuation, thus negatively impacting
+their market value. Even though market condition would revert, the initial market perception of the firm
+would continue to be at play and exibits a path dependence which persistently play a part in the firms's market value.
+
+\section*{Panel data estimation}
+The agumented model with \textit{D(DecIPO)} shows insiginificant coefficient for this added dummy variable.
+That is expected because the IPO month of a firm is either in December or not in December, so 
+this dummy variable is absorbed by the fixed effects of the firm.
+
+\section*{DD analysis}
+The baseline model shows a positive coefficient for \textit{D(Post)} and a negative coefficient for 
+\textit{D(Treated)}, while controlling for Size, MB, and D(RD). With firm fixed effects, the variable \textit{D(Treated)} is fully
+absorbed because a firm is either in NY/CA or not, unless the firm has moved either from NY/CA to other states or
+from other states to NY/CA. With both firm fixed effects and year fixed effects, both \textit{D(Treated)} and \textit{D(Post)} are absorbed
+because again, \textit{D(Treated)} only depends on the year which is absorbed into year FE. In all three models, the interaction
+term between \textit{D(Treated)} and \textit{D(Post)} is insignificant.
+When examining the set of indicators for each year together with \textit{D(Treated)}, a clear trend can be spotted. 
+Recall that key identifying assumption of DD is “Parallel Trends”, which stipulates that no correlation between outcome 
+and assignment, and that in absence of treatment, the outcome for treated and controls is unaffected.
+From Figure \ref{fig:parallel_trends}, we can see that the trend of the debt ratio for the treated group and the control group
+is parallel before the treatment, which is the year 2000. After the treatment, the debt ratio for the treated group increases more than the trend
+suggested by the control group. This suggests that the treatment has a positive effect on the debt ratio of the treated group.
+This is also consistent with the coefficients in the baseline model.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{parallel_trends.png}
+    \caption{Parallel Trends Assumption}
+    \label{fig:parallel_trends}
+\end{figure}
+
+\section*{Matching models}
+In year 2010 only, the coefficient of \textit{D(Treated)} is -0.049 and significant at 5\% level, which (may) suggest that
+firms in NY/CA that are affected by the shock have a lower debt ratio than firms in other states. This is consistent with the DD analysis.
+With propensity score matching, the coefficient of \textit{D(Treated)} is -0.039 and significant at 5\% level.
+This suggests that the treatment effect is robust. The implication of the matching model is that for firm with close probability
+of receiving treatment based on their \textit{Size}, \textit{MB}, and \textit{D(RD)}, the treated firm exhibits a lower debt ratio
+than their "matches" in other states. This is consistent with the DD analysis and the baseline model.
+Using a nearest neighbor matching of 2 neighors give a similar result, with the coefficience of \textit{D(Treated)} of -0.043
+and again significant at 5\% level. This suggests that the treatment effect is robust to the choice of the number of neighbors.
 
 \section*{Appendix}
 
