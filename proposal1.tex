@@ -1,0 +1,326 @@
+\documentclass[12pt, times]{article}
+\usepackage{caption}
+\usepackage[labelfont=bf]{caption}
+\usepackage{amssymb}
+\usepackage{subcaption}
+\usepackage[flushleft]{threeparttable}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{mathrsfs}
+\usepackage{lscape}
+\usepackage{comment}
+\usepackage{graphicx}
+%\usepackage{kbordermatrix}
+\usepackage{pdflscape}
+\usepackage{longtable}
+\usepackage{appendix} %\usepackage[title]{appendix}
+\usepackage{booktabs}
+\interfootnotelinepenalty=10000
+\usepackage[top=1in, bottom=1in, left=1.0in, right=1.0in]{geometry}
+\usepackage{natbib}
+%\usepackage[font=bf]{caption}
+\usepackage{epstopdf}
+\usepackage{tikz}
+\usepackage[encapsulated]{CJK}
+\usepackage{bm}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{babel}
+\usepackage{diagbox, xcolor}
+\usepackage{array}
+\usepackage{setspace}
+\usepackage{multirow}
+\usepackage{tabularray}
+\usepackage{changepage}
+%\usepackage{ulem} % For strikeout
+\usepackage{soul} % for \st (strikethrough)
+\usepackage{caption}  % Add this in the preamble
+\usepackage{float}  % Add this in the preamble if not already present
+\usepackage{adjustbox}
+\usetikzlibrary{shapes,arrows}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{implication}{Implication}
+\newtheorem{prediction}{Prediction}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{case}{Case}
+\newtheorem{conjecture}{Conjecture}
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{assumption}{Assumption}
+\newcommand{\Indic}[1]{\ensuremath{\mathbb{I}_{\left\{#1\right\}}}} % indicator function
+
+\usepackage{xcolor}
+\newcommand\mynotes[1]{\textcolor{red}{#1}}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyfoot[R]{\thepage} % Align page number to the right
+\renewcommand{\headrulewidth}{0pt} % Remove the top header line
+
+%\usepackage{url}
+%\usepackage[hypertexnames=false,hyperfootnotes=false]{hyperref}
+%\usepackage[hidelinks]{hyperref}
+
+%\bibliographystyle{generic}
+\bibliographystyle{plain}
+%\bibliographystyle{IEEEtran}
+%\bibliographystyle{plain}
+
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\ba}{\begin{eqnarray}}
+\newcommand{\ea}{\end{eqnarray}}
+\oddsidemargin 0in \evensidemargin0in \marginparwidth 1in
+\marginparsep 0pt \topmargin 0pt \headheight 0pt \headsep 0pt
+\topskip 0pt \footskip 30pt \textheight 8.5in \textwidth 6.5in
+%\parskip=\medskipamount
+
+\renewcommand{\baselinestretch}{1.5}
+
+%\usepackage{todonotes} \presetkeys{todonotes}{size=\tiny}{}
+\usepackage[disable]{todonotes}
+\newcommand{\mstodo}[1]{{\color{red} \noindent {\sffamily\bfseries TODO:} #1}}
+
+%\newcommand{\ignore}[1]{{}}
+
+\setcitestyle{notesep={; }}
+
+\begin{document}
+
+\thispagestyle{empty}
+\def\thefootnote{\fnsymbol{footnote}}
+\begin{center}
+  \renewcommand{\baselinestretch}{2}
+  \vspace*{2in}
+
+  {\Large
+    \textbf{The Impact of CPI, Interest Rate, and Unemployment upon Actual Rentals: An evaluation in France}\footnote{\baselineskip=12pt
+      This is the author's final project for ECON7011C Econometrics for Finance.}
+  }
+
+  {\Large Jenny Zhang\footnote{\baselineskip=12pt
+      Carl H. Lindner College of Business, University of Cincinnati, 2906 Woodside Drive, Cincinnati, OH 45221, USA. Email: zhang3si@mail.uc.edu.}\\} \vspace{0.2in}
+
+  {\Large \today \\}
+  \vspace{0.5in}
+\end{center}
+\todo{If this note
+  is here then todo notes are NOT disabled! To disable, un-comment \texttt{\textbackslash
+    usepackage[disable]{todonotes}} above.}
+
+
+\newpage
+\renewcommand{\baselinestretch}{1.5}
+%\begin{center}
+% \LARGE{{{\bf Rainy Day Liquidity\\ }}}
+%\end{center}
+\setcounter{page}{1}
+\def\thefootnote{\arabic{footnote}}
+\setcounter{footnote}{0}
+
+\doublespacing
+\section{Introduction}
+\vspace{-1.0em}
+\subsection{Background}
+Rental market is a critical component of any housing economy, serving as a dynamic intersection of supply, demand, and macroeconomic conditions. This market directly affects household affordability, economic inequality, and social mobility. Thus, understanding the factors influencing rental prices is essential to address affordability challenges, guide public policy, and anticipate market trends. From macroeconomic perspectives, variables such as inflation, interest rates, and unemployment levels are widely recognized as factors affecting housing market behaviors, yet their specific impact on actual rental prices remains a complex and underexplored area of study.
+
+The Consumer Price Index (CPI), as a measure of inflation, reflects changes in purchasing power and broader economic stability, which may influence both tenants' ability to pay rent and landlords' rent-setting behaviors. Interest rates, through their effect on borrowing costs and housing demand, also have potential spillover effects on the rental market. Meanwhile, unemployment, as a proxy for household financial security, is also pivotal in determining renters' capacity to meet monthly payments and drive overall demand in the rental market. The rental market in France presents a particularly compelling case for studying these relationships due to its unique blend of market dynamics and policy interventions.
+
+In France, the rental sector accounts for a significant share of the housing market, reflecting the reliance of a substantial proportion of the population on rental accommodation. France has a long history of active government intervention in the rental market, including rent control policies, government-backed guarantee programs, and tax incentives for landlords. For example, French government has introduced the ALUR law to regulate private housing rental prices in cities where housing market pressures are exceptionally high. French government also offers a rental guarantor service called Visale, which provides a guarantee to landlords on behalf of eligible tenants, covering unpaid rent for up to 36 months and potential property damage up to two months' rent. Therefore, France represents an example of a developed European housing market, where the interaction between market forces and policy interventions offers insights for other countries experiencing similar affordability challenges. By providing a comprehensive evaluation of the impact of CPI, interest rates, and unemployment on actual rentals in France, this research contributes to broader discussions on housing economics, rent regulation, and urban planning applicable beyond the French context.
+\vspace{-1.0em}
+\subsection{Past literature}
+A related line of research has analyzed whether and how macroeconomic factors affect the rental market. There are studies discussing the role of inflation indices, particularly the CPI, in rental agreements, including lease escalation clauses and inflation-driven rent adjustments. \cite{dougherty1982inflation} find that rent adjustments reflect past inflation rates, illustrating the direct linkage between CPI changes and rental costs. \cite{crone2004cpi} examine rental price changes, highlighting instances where lease contracts allow CPI-linked adjustments to rents. \cite{arevalo2004rental} and \cite{eiglsperger2024owner} discuss inflation's role in determining rental equivalence for owner-occupied housing. \cite{ambrose2018housing} emphasize the CPI’s lag in reflecting real-time market rent changes. \cite{levy2021housing} examines administrative data from French dwellings, and reveals that the overall CPI captures the fluctuations in the rental markets.
+
+Besides inflation, interest rates and unemployment rates also influence real estate markets \citep{cucurachius}. \cite{case2000real} indicate that high-interest rates make mortgages more costly, increasing demand for rental properties, which drives up rental prices. \cite{hardin2012reit} observe that higher interest rates reduce property purchases, channeling more people toward renting and thus raising the rent index. \cite{lin2021house} also explore how changes in mortgage interest rates influence housing market behaviors, including rental costs. \cite{bouchouicha2012real} imply that declining employment rate contributes to the decrease of rental growth which is reflected in property valuation. \cite{carlsson2014discrimination} examine how employment status influences rental market access. \cite{gan2018market} explore how unemployment influences rental market dynamics, showing that higher unemployment rates thin the rental market, leading to slower rent growth or declines. Additionally, \cite{usta2021impact} shows that the unemployment rate has a measurable negative impact on rental indices through reduced demand.
+
+Despite the rich literature on housing economics, the specific interplay between macroeconomic indicators and rental dynamics in France has received limited academic attention. Therefore, I attempt to understand variation in actual rentals with the help of Autoregressive Distributed Lag Stationarity (ARDL) model in which CPI, interest rate and unemployment rate are included as additional explanatory variables. The remainder of the paper is organized as follows: Section 2 describes the investigated sample and the variables used in my ARDL model; Section 3 discusses my research methodology and main empirical results; and Section 4 presents conclusions.
+\vspace{-1.5em}
+\section{Data}
+\vspace{-1.0em}
+\subsection{Variable definitions}
+This paper analyzes a monthly dataset spanning from January 1996 to September 2024 for France, comprising a total of 345 observations for each variable. The dependent variable (``rent'') is Harmonized Index of Actual Rentals for Housing for France (CP0410FRM086NEST)\footnote{Eurostat, Harmonized Index of Consumer Prices: Actual Rentals for Housing for France [CP0410FRM086NEST], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CP0410FRM086NEST, November 24, 2024.}, measured in units of Index (2015=100) and presented as a seasonally unadjusted monthly series to reflect rental price trends in France.
+
+The analysis also includes Total Consumer Price Index for France (FRACPIALLMINMEI)\footnote{Organization for Economic Co-operation and Development, Consumer Price Indices (CPIs, HICPs), COICOP 1999: Consumer Price Index: Total for France [FRACPIALLMINMEI], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/FRACPIALLMINMEI, November 24, 2024.}, another seasonally unadjusted monthly series measured in units of Index (2015=100), capturing the overall price level (``cpi'') for consumer goods and services in France. To examine interest rate effects (``interest''), I use the Long-Term Government Bond Yields (10-Year Benchmark) for France (IRLTLT01FRM156N)\footnote{Organization for Economic Co-operation and Development, Interest Rates: Long-Term Government Bond Yields: 10-Year: Main (Including Benchmark) for France [IRLTLT01FRM156N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/IRLTLT01FRM156N, November 24, 2024.}, reported in units of Percent and seasonally unadjusted, because this long-term interest rate closely relates to mortgage rates that supposedly influence the housing market. Lastly, unemployment levels (``unemp'') are represented by the Monthly Unemployment Rate Total for individuals aged 15 and over (LRHUTTTTFRM156N)\footnote{Organization for Economic Co-operation and Development, Infra-Annual Labor Statistics: Monthly Unemployment Rate Total: 15 Years or over for France [LRHUTTTTFRM156N], retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/LRHUTTTTFRM156N, November 24, 2024.}, also measured in units of Percent and seasonally unadjusted. Table 1 reports the descriptive statistics for these main variables, offering an overview of their distributions and trends.
+
+\renewcommand{\baselinestretch}{1.0}
+\captionof{table}{\bf Descriptive Statistics}
+\begin{scriptsize}
+  \begin{center}
+    \tabcolsep 20pt
+    \begin{tabular}{lcccccccc}
+      \toprule
+      Variables & Obs & Mean  & Median & Max    & Min   & Sd    \\
+      \midrule
+      rent      & 345 & 90.06 & 94.11  & 107.60 & 69.65 & 11.73 \\
+      cpi       & 345 & 94.23 & 94.79  & 121.06 & 75.97 & 11.54 \\
+      interest  & 345 & 3.02  & 3.39   & 6.65   & -0.34 & 1.85  \\
+      unemp     & 345 & 9.29  & 9.10   & 13.20  & 6.50  & 1.48  \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{scriptsize}
+
+\subsection{Stationarity}
+Figure 1 shows the intord plot for rent: 1)	visual inspection suggests I(1) or I(2) stationary because mean of rent does not seem to be constant over time; 2) SDs suggest I(1) stationary because SD for the first difference declines substantially while for the second order difference it starts increasing; 3) ACFs for rent are not diminishing quickly for the levels suggesting that it should be I(1) stationary; 4)	ADF test suggests I(2) or maybe higher stationary because |-1.97| < |-2.57|, suggesting no evidence against the null hypothesis that the first difference is non-stationary. Overall, it seems that rent is I(1) stationary.
+\begin{figure}[H]
+  \begin{center}
+    $
+      \begin{array}
+        [c]{cc}%
+        \makebox[0pt]{\includegraphics[width=170mm, height=49mm]{plot/1.png}}
+      \end{array}
+    $
+  \end{center}
+  \vspace{-1.5em}
+  \caption{}
+\end{figure}
+\vspace{-1.5em}
+\hspace{1.5em}Figure 2 shows the intord plot for cpi: 1) visual inspection suggests I(1) or I(2) stationary because mean of cpi does not seem to be constant over time; 2) SDs suggest I(1) stationary because SD for the first difference declines substantially while for the second order difference it starts increasing; 3) ACFs for cpi are not diminishing quickly for the levels suggesting that it should be I(1) stationary; 4) ADF test suggests I(2) or maybe higher stationary because |-2.53| < |-2.57|, suggesting no evidence against the null hypothesis that the first difference is non-stationary. Overall, it seems that cpi is I(1) stationary.
+\begin{figure}[H]
+  \begin{center}
+    $
+      \begin{array}
+        [c]{cc}%
+        \makebox[0pt]{\includegraphics[width=170mm, height=49mm]{plot/2.png}}
+      \end{array}
+    $
+  \end{center}
+  \vspace{-1.5em}
+  \caption{}
+\end{figure}
+\vspace{-1.5em}
+\hspace{1.5em}Figure 3 shows the intord plot for interest: 1) visual inspection suggests I(1) or I(2) stationary because mean of interest does not seem to be constant over time; 2) SDs suggest I(1) stationary because SD for the first difference declines substantially while for the second order difference it starts increasing; 3) ACFs for interest are not diminishing quickly for the levels suggesting that it should be I(1) stationary; 4) ADF test suggests I(1) stationary because |-9.09| > |-3.45|, suggesting strong evidence against the null hypothesis that the first difference is non-stationary. Overall, it seems that interest is I(1) stationary.
+\begin{figure}[H]
+  \begin{center}
+    $
+      \begin{array}
+        [c]{cc}%
+        \makebox[0pt]{\includegraphics[width=170mm, height=49mm]{plot/3.png}}
+      \end{array}
+    $
+  \end{center}
+  \vspace{-1.5em}
+  \caption{}
+\end{figure}
+\vspace{-1.5em}
+
+\begin{figure}[H]
+  \begin{center}
+    $
+      \begin{array}
+        [c]{cc}%
+        \makebox[0pt]{\includegraphics[width=170mm, height=49mm]{plot/4.png}}
+      \end{array}
+    $
+  \end{center}
+  \vspace{-1.5em}
+  \caption{}
+\end{figure}
+\vspace{-1.5em}
+\hspace{1.5em}Figure 4 shows the intord plot for unemp: 1) visual inspection suggests I(1) or I(2) stationary because mean of unemp does not seem to be constant over time; 2) SDs suggest I(1) stationary because SD for the first difference declines substantially while for the second order difference it starts increasing; 3) ACFs for unemp are not diminishing quickly for the levels suggesting that it should be I(1) stationary; 4) ADF test suggests I(1) stationary because |-4.07| > |-3.45|, suggesting strong evidence against the null hypothesis that the first difference is non-stationary. Overall, it seems that unemp is I(1) stationary.
+\vspace{-1.5em}
+\section{Empirical methodology and results}
+\subsection{Dynamic specification}
+First, I take the first differences of the variables — rent, CPI, interest, and unemployment — to obtain drent, dcpi, dinterest, and dunemp. It ensures their stationarity because these variables are all I(1) stationary. I start with an ARDL model (r0): 2 years’ worth of time lags without seasonal dummies. Based on the regression results for r0 shown in the Appendix A, I remove some of the insignificant dunemp lags – L(dunemp,21:24) to get model (r1). I then use a granger causality test (test1) to show that the set of L(dunemp,21:24) does not granger cause drent, which means that the set of L(dunemp,21:24) does not belong to the model. Based on the regression results for r1 shown in the Appendix A, I remove some of the insignificant dinterest lags – L(dinterest,20:24) to get model (r2). I then use a granger causality test (test2) to show that the set of L(dinterest,20:24) does not granger cause drent, which means that the set of L(dinterest,20:24) does not belong to the model. Next, I also remove some of the insignificant drent lags – L(drent,22:24) to get model (r3) based on the regression results for r2 shown in the Appendix A. I then use a granger causality test (test3) to show that the set of L(drent,22:24) does not granger cause drent, which means that the set of L(drent,22:24) does not belong to the model. The results for the above granger causality tests are shown in Table 3.
+
+\hspace{1.5em}Now, the last lag L(drent,21) for drent, the last lag L(dcpi,24) for dcpi, the last lag L(dinterest,19) for dinterest, and the last lag L(dunemp,20) for dunemp are all significant in r3. Based on granger causality tests, model (r3) should be the best model for now. In addition, I check out AIC/BIC and find model (r3) has the lowest AIC and BIC among the above four models (r0, r1, r2 and r3), which also suggests that r3 is the best model for now. The AIC/BIC results are shown in Table 2.
+
+\subsection{Seasonality}
+In this section, I provide the evidence on seasonality. First, to test whether seasonality is present in my model in the form of seasonal dummies, I include seasonal dummies season(drent) into r3 to build a new model (r4). I then use a granger causality test (test4) to show that a set of season(drent) does not granger cause drent because p-value > 0.10, which means that seasonal dummies season(drent) do not belong to the model. Therefore, there is no evidence that seasonality is present in my model in the form of seasonal dummies.
+
+\hspace{1.5em}Second, I will test whether seasonality is present in my model in the form of seasonal lags. Model (r3) already includes the seasonal lags of each explanatory variable including the lagged dependent variable, so I exclude these seasonal lags to build a new model (r5) to see if they belong to the model. I also use a granger causality test (test5) to show that seasonal lags granger cause drent and they do belong to the model because p-value < 0.01. Thus, there is strong evidence that seasonality is present in my model in the form of seasonal lags. The results for the above granger causality tests are shown in Table 3. Besides, model (r3), which includes seasonal lags, still has the lowest AIC and BIC among the above six models (r0, r1, r2, r3, r4 and r5) as indicated in Table 2.
+
+\renewcommand{\baselinestretch}{0.5}
+\captionof{table}{\bf AIC and BIC for First Six Models}\label{1}
+\begin{scriptsize}
+  \begin{center}
+    \tabcolsep 15pt
+    \begin{tabular}{lcccccccccccccc}
+      \toprule
+          & r0        & r1        & r2        & r3       & r4       & r5        \\
+      \midrule
+      AIC & -322.3247 & -326.6866 & -328.0659 & -330.151 & -329.683 & -310.2306
+      \\
+      BIC & 58.27577  & 38.84057  & 18.6196   & 5.229527 & 47.14912 & 10.07665  \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{scriptsize}
+
+\subsection{Granger causality of the best model}
+In this section, I test whether each variable including it’s lags in r3 has any effect on the outcome variable drent over time. I exclude L(drent,1:21) from r3 to build model (r6), exclude L(dcpi,0:24) from r3 to build model (r7), exclude L(dinterest, 0:19) to build model (r8), and exclude L(dunemp, 0:20) to build model (r9). I do granger causality testing of the best model (r3), and find that the set of L(drent,1:21) in test 6, the set of L(dcpi,0:24) in test 7, and the set of L(dunemp, 0:20) in test 9 granger cause drent because their p-values are less than 0.05. Thus, there is reasonable evidence that they all belong to the model. However, I find that the set of L(dinterest, 0:19) in test 8 does not granger cause drent because its p-value is larger than 0.10, which means that the variable dinterest should be excluded from the best model. The results for the above granger causality tests are also shown in Table 3. Therefore, model (r8) which excludes the variable dinterest is now the new best model. Based on the regression results for r8 shown in the Appendix A, I remove one insignificant drent lag – L(drent,21) to get model (r10). I then use a granger causality test (test10) to show that the L(drent,21) does not granger cause drent, which means that the L(drent,21) does not belong to the model. The results for the above granger causality tests are shown in Table 3 as well. Now, the last lag L(drent,20) for drent, the last lag L(dcpi,24) for dcpi, and the last lag L(dunemp,20) for dunemp are all significant in r10. Thus, model (r10) becomes the new best model.
+
+\renewcommand{\baselinestretch}{0.5}
+\captionof{table}{\bf Granger Causality Test Results}
+\begin{scriptsize}
+  \begin{center}
+    \tabcolsep 4pt
+    \begin{tabular}{lcccccccccccccc}
+      \toprule
+             & test1     & test2     & test3     & test4     & test5    & test6        & test7      & test8    & test9      & test10    \\
+      \midrule
+      F.stat & 0.6288632 & 1.223292  & 0.9396015 & 1.398382  & 5.287908 & 3.329429     & 1.778683   & 1.349227 & 1.812215   & 2.04974
+      \\
+      pvalue & 0.6423965 & 0.2990221 & 0.4222345 & 0.1748398 & 0.00043  & 3.665213e-06 & 0.01189105 & 0.1499   & 0.01844659 & 0.1534713 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{scriptsize}
+
+\subsection{Serial correlation}
+I test the best model for serial correlation in the residuals with both Box-Ljung test and Breusch-Godfrey test. Since p-values for both of these tests are greater than 0.05, so I fail to reject the null which means residuals are not serial correlated. Therefore, there is no issue of serial correlation in the best model (r10). The test results are shown in Figure 5.
+\begin{figure}[H]
+  \begin{center}
+    $
+      \begin{array}
+        [c]{cc}%
+        \makebox[0pt]{\includegraphics[width=170mm, height=20mm]{plot/5.png}}
+      \end{array}
+    $
+  \end{center}
+  \vspace{-1.5em}
+  \caption{}
+\end{figure}
+\vspace{-1.5em}
+Lastly, I check RMSPEs of all the above eleven models from r0 to r10, and the results are shown in Table 4. The model (r10) has the lowest RMSPE. In a conclusion, model (r10) is the final best model, and its regression resuls are shown in the Appendix A:
+\begin{equation}
+  \Delta rent_t = \alpha + \sum_{i=1}^{20} \phi_i \Delta rent_{t-i} + \sum_{i=0}^{24} \beta_i \Delta cpi_{t-i} + \sum_{i=0}^{20} \gamma_i \Delta unemp_{t-i} + u_t
+\end{equation}
+
+\renewcommand{\baselinestretch}{0.5}
+\captionof{table}{\bf RMSPEs of All Models}
+\begin{scriptsize}
+  \begin{center}
+    \tabcolsep 10pt
+    \begin{tabular}{lcccccccccccccc}
+      \toprule
+            & r0    & r1    & r2    & r3    & r4    & r5    & r6    & r7    & r8    & r9    & r10   \\
+      \midrule
+      RMSPE & 0.161 & 0.159 & 0.159 & 0.158 & 0.161 & 0.160 & 0.163 & 0.152 & 0.151 & 0.154 & 0.151 \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{scriptsize}
+
+\section{Conclusions}
+To summarize, the best model (r10) reveals that both CPI and unemployment rate demonstrate notable impacts on rentals. The model highlights a dual influence of CPI on rental prices. It suggests that inflation affects rentals both immediately and over time. The immediate positive impact reflects direct adjustments, while lagged negative impact suggests slower contractual adaptations or prolonged expectations of inflation. Unemployment also plays a significant role, but its impact is multifaceted and delayed. Initially, rising unemployment exerts a positive effect on rental prices, potentially due to rental discrimination that limits access to housing for unemployed individuals, thereby concentrating demand among eligible renters. However, a few months later, unemployment leads to a reduction in rental demand, reflecting how economic hardships take time to materialize in the housing market. Notably, interest rates were excluded from the model due to their insignificance, indicating that they do not contribute meaningfully to explaining rental price dynamics in this context. This irrelevance is potentially due to the indirect nature of their spillover effects on rental markets. While the model performs well in terms of residual diagnostics and model selection criteria, the moderate explanatory power (Adj. R-squared) suggests room for improvement, possibly by including other explanatory variables or refining the lag structure in the future research.
+
+
+%***************************** references ***********************
+\clearpage
+\newpage
+\pagenumbering{gobble}
+%\bibliographystyle{apalike}
+\bibliography{7011c}
+
+
+%***************************** appendix  ***********************
+
+
+\end{document}

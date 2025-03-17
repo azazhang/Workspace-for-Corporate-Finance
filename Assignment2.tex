@@ -24,9 +24,10 @@
 \singlespacing
 
 \section*{Introduction}
-This report examines unobserved heterogeneity and correlations in a corporate finance setting. The research question is the capital structure measured by market debt ratio. The methodologies used follows Petersen (2009) and Gormley and Matsa (2014). \\
+This report examines unobserved heterogeneity and correlations in a corporate finance setting. The research question is the capital structure measured by market debt ratio. The methodologies used follows Petersen (2009) and Gormley and Matsa (2014).
+
 \section*{Part A. Data management and variable construction}
-Data are primarily from Compustat, with the \textit{linkdt} variable from the CRPS/Compustat link table being used to determine the firm age. As both Compustate and CRSP have an indicator for exchange code (exchg in Compustat, exchd in CRSP) and they yield different results, this study uses exchg in Compustat to match the original study. Independent variables are lagged a year. Summary statistics are presented in Table 1 in appendix.\\
+Data are primarily from Compustat, with the \textit{linkdt} variable from the CRPS/Compustat link table being used to determine the firm age. As both Compustate and CRSP have an indicator for exchange code (exchg in Compustat, exchd in CRSP) and they yield different results, this study uses exchg in Compustat to match the original study. Independent variables are lagged a year. Summary statistics are presented in Table 1 in appendix.
 
 \section*{Part B. Standard errors}
 The results of this part are shown in Table 2 in appendix. Comparing the first four columns we can draw conclusion regarding the firm effect and time effects. Although the coefficients in the first four regressions are the same, their standard errors are vastly different. From how biased the estimation is, we can infer for each variable time effect is stronger or firm effect is stronger. In general, the standard errors in II is pretty close to that in IV, indicating that for this study correlation within firm dominates. This is intuitive, as we would effect strong time-series correlation in these variables for a given firm. Firms are not likely to change their fundamentals drastically year over year, so firm effect can be very persistent. For example, the standard errors of ln\_firm\_age and ln\_market\_value\_of\_assets are much larger in the OLS with White standard errors than in the OLS with clustered standard errors by firm, time, and both firm and time. This suggests that the time effect is stronger than the firm effect for these two variables. The standard errors of market\_to\_book\_assets and profits\_to\_sales are much larger in the OLS with clustered standard errors by firm, time, and both firm and time than in the OLS with White standard errors. This suggests that the firm effect is stronger than the time effect for these two variables. \\
@@ -59,225 +60,269 @@ Results are shown in Table 4 and Table 5 in appendix. The data managment process
 
 \section*{Appendix}
 
-\begin{longtable}{lrrrrrr}
-    \caption{Summary statistics table}                                                          \\
+% -----------------------------------------------------------
+% Summary Statistics
+% -----------------------------------------------------------
+\begin{longtable}{@{\extracolsep{\fill}}lrrrrrr}
+    \caption{Summary statistics table}                                                                      \\
     \toprule
-    Variable            & Observations & Mean     & Std.\ Dev. & Min      & Median   & Max      \\
+    Variable                      & Observations & Mean     & Std.\ Dev. & Min       & Median   & Max       \\
     \midrule
     \endfirsthead
-    \caption[]{Summary statistics table (continued)}                                            \\
+    \caption[]{Summary statistics table (continued)}                                                        \\
     \toprule
-    Variable            & Observations & Mean     & Std.\ Dev. & Min      & Median   & Max      \\
+    Variable                      & Observations & Mean     & Std.\ Dev. & Min       & Median   & Max       \\
     \midrule
     \endhead
     \midrule
     \endfoot
     \bottomrule
     \endlastfoot
-    market\_debt\_ratio & 10094        & 0.176870 & 0.142866   & 0.000000 & 0.146826 & 0.790811 \\
-    rd\_positive        & 10094        & 0.381155 & 0.485695   & 0.000000 & 0.000000 & 1.000000 \\
+    market\_debt\_ratio           & 10094        & 0.176866 & 0.142859   & 0.000000  & 0.146809 & 0.790811  \\
+    ln\_market\_value\_of\_assets & 10094        & 8.510383 & 1.881171   & 4.110472  & 8.461485 & 13.179756 \\
+    ln\_firm\_age                 & 10094        & 2.835833 & 0.903136   & 0.000000  & 3.091042 & 4.007333  \\
+    profits\_to\_sales            & 10094        & 0.204212 & 0.130631   & -0.045369 & 0.168042 & 0.825143  \\
+    tangible\_assets              & 10094        & 0.254928 & 0.212209   & 0.000000  & 0.213651 & 0.908860  \\
+    market\_to\_book\_assets      & 10094        & 1.762658 & 0.962787   & 0.771887  & 1.434866 & 7.282147  \\
+    advertising\_to\_sales        & 10094        & 0.027397 & 0.031033   & 0.000000  & 0.016362 & 0.185723  \\
+    rd\_to\_sales                 & 10094        & 0.011700 & 0.023733   & 0.000000  & 0.000000 & 0.135685  \\
+    rd\_positive                  & 10094        & 0.381117 & 0.485685   & 0.000000  & 0.000000 & 1.000000  \\
+\end{longtable}
+
+% -----------------------------------------------------------
+% Regression Results
+% -----------------------------------------------------------
+\begin{longtable}{@{\extracolsep{\fill}}lccccc}
+    \caption{Regression results}                                                  \\
+    \toprule
+                                  & I      & II     & III    & IV        & V      \\
+    \midrule
+    \endfirsthead
+    \caption[]{Regression results (continued)}                                    \\
+    \toprule
+                                  & I      & II     & III    & IV        & V      \\
+    \midrule
+    \endhead
+    \midrule
+    \endfoot
     \bottomrule
+    \endlastfoot
+    ln\_firm\_age                 &
+    \makecell{-0.0227**                                                           \\(0.0016)} &
+    \makecell{-0.0227**                                                           \\(0.0035)} &
+    \makecell{-0.0227**                                                           \\(0.0025)} &
+    \makecell{-0.0227**                                                           \\(0.0035)} &
+    \makecell{-0.0024                                                             \\(0.0030)} \\
+    ln\_market\_value\_of\_assets &
+    \makecell{0.0143**                                                            \\(0.0008)} &
+    \makecell{0.0143**                                                            \\(0.0025)} &
+    \makecell{0.0143**                                                            \\(0.0015)} &
+    \makecell{0.0143**                                                            \\(0.0025)} &
+    \makecell{0.0303**                                                            \\(0.0011)} \\
+    market\_to\_book\_assets      &
+    \makecell{-0.0543**                                                           \\(0.0013)} &
+    \makecell{-0.0543**                                                           \\(0.0034)} &
+    \makecell{-0.0543**                                                           \\(0.0052)} &
+    \makecell{-0.0543**                                                           \\(0.0033)} &
+    \makecell{-0.0545**                                                           \\(0.0033)} \\
+    profits\_to\_sales            &
+    \makecell{-0.1077**                                                           \\(0.0138)} &
+    \makecell{-0.1077**                                                           \\(0.0395)} &
+    \makecell{-0.1077                                                             \\(0.0704)} &
+    \makecell{-0.1077**                                                           \\(0.0376)} &
+    \makecell{-0.0031                                                             \\(0.0287)} \\
+    tangible\_assets              &
+    \makecell{0.0692**                                                            \\(0.0068)} &
+    \makecell{0.0692**                                                            \\(0.0189)} &
+    \makecell{0.0692**                                                            \\(0.0169)} &
+    \makecell{0.0692**                                                            \\(0.0185)} &
+    \makecell{0.0886**                                                            \\(0.0102)} \\
+    advertising\_to\_sales        &
+    \makecell{-0.1557**                                                           \\(0.0382)} &
+    \makecell{-0.1557                                                             \\(0.0917)} &
+    \makecell{-0.1557*                                                            \\(0.0605)} &
+    \makecell{-0.1557                                                             \\(0.0911)} &
+    \makecell{-0.0521                                                             \\(0.0559)} \\
+    rd\_to\_sales                 &
+    \makecell{-0.3880**                                                           \\(0.0554)} &
+    \makecell{-0.3880**                                                           \\(0.1325)} &
+    \makecell{-0.3880**                                                           \\(0.0564)} &
+    \makecell{-0.3880**                                                           \\(0.1315)} &
+    \makecell{-0.7087**                                                           \\(0.0830)} \\
+    rd\_positive                  &
+    \makecell{0.0048                                                              \\(0.0031)} &
+    \makecell{0.0048                                                              \\(0.0083)} &
+    \makecell{0.0048                                                              \\(0.0080)} &
+    \makecell{0.0048                                                              \\(0.0082)} &
+    \makecell{0.0188**                                                            \\(0.0036)} \\
+    R-squared                     & 0.2028 & 0.2028 & 0.2028 & 0.2028    & 0.6370 \\
+    Coefficient estimates         & OLS    & OLS    & OLS    & OLS       & FM     \\
+    Standard errors               & White  & CL - F & CL - T & CL - F\&T & FM     \\
 \end{longtable}
+{\parbox{\textwidth}{
+    \footnotesize
+    \textit{Note:} This table presents the regression results for different model specifications.
+    Column I shows the results using OLS with White standard errors.
+    Columns II, III, and IV show the results using OLS with clustered standard errors by firm, time, and both firm and time, respectively.
+    Column V presents the results using the Fama-MacBeth method.
+    The dependent variable is the market debt ratio.
+    The independent variables include log(firm\_age), log(market value of assets), market\_to\_book\_assets, profits\_to\_sales, tangible\_assets, advertising\_to\_sales, rd\_to\_sales, and rd\_positive.
+    Standard errors are reported in parentheses.
+    ** indicates significance at the 1\% level, and * indicates significance at the 5\% level.
+}}
 
-\begin{longtable}{lccccc}
-    \small
-    \caption{Regression results}
-    \begin{tabular}{lccccc}
-        \toprule
-                                      & I      & II     & III    & IV        & V      \\
-        \midrule
-        ln\_firm\_age                 &
-        \makecell{-0.0227**                                                           \\(0.0016)} &
-        \makecell{-0.0227**                                                           \\(0.0035)} &
-        \makecell{-0.0227**                                                           \\(0.0025)} &
-        \makecell{-0.0227**                                                           \\(0.0035)} &
-        \makecell{-0.0024                                                             \\(0.0030)} \\
-        ln\_market\_value\_of\_assets &
-        \makecell{0.0143**                                                            \\(0.0008)} &
-        \makecell{0.0143**                                                            \\(0.0025)} &
-        \makecell{0.0143**                                                            \\(0.0015)} &
-        \makecell{0.0143**                                                            \\(0.0025)} &
-        \makecell{0.0303**                                                            \\(0.0011)} \\
-        market\_to\_book\_assets      &
-        \makecell{-0.0543**                                                           \\(0.0013)} &
-        \makecell{-0.0543**                                                           \\(0.0034)} &
-        \makecell{-0.0543**                                                           \\(0.0052)} &
-        \makecell{-0.0543**                                                           \\(0.0033)} &
-        \makecell{-0.0545**                                                           \\(0.0033)} \\
-        profits\_to\_sales            &
-        \makecell{-0.1077**                                                           \\(0.0138)} &
-        \makecell{-0.1077**                                                           \\(0.0395)} &
-        \makecell{-0.1077                                                             \\(0.0704)} &
-        \makecell{-0.1077**                                                           \\(0.0376)} &
-        \makecell{-0.0031                                                             \\(0.0287)} \\
-        tangible\_assets              &
-        \makecell{0.0692**                                                            \\(0.0068)} &
-        \makecell{0.0692**                                                            \\(0.0189)} &
-        \makecell{0.0692**                                                            \\(0.0169)} &
-        \makecell{0.0692**                                                            \\(0.0185)} &
-        \makecell{0.0886**                                                            \\(0.0102)} \\
-        advertising\_to\_sales        &
-        \makecell{-0.1557**                                                           \\(0.0382)} &
-        \makecell{-0.1557                                                             \\(0.0917)} &
-        \makecell{-0.1557*                                                            \\(0.0605)} &
-        \makecell{-0.1557                                                             \\(0.0911)} &
-        \makecell{-0.0521                                                             \\(0.0559)} \\
-        rd\_to\_sales                 &
-        \makecell{-0.3880**                                                           \\(0.0554)} &
-        \makecell{-0.3880**                                                           \\(0.1325)} &
-        \makecell{-0.3880**                                                           \\(0.0564)} &
-        \makecell{-0.3880**                                                           \\(0.1315)} &
-        \makecell{-0.7087**                                                           \\(0.0830)} \\
-        rd\_positive                  &
-        \makecell{0.0048                                                              \\(0.0031)} &
-        \makecell{0.0048                                                              \\(0.0083)} &
-        \makecell{0.0048                                                              \\(0.0080)} &
-        \makecell{0.0048                                                              \\(0.0082)} &
-        \makecell{0.0188**                                                            \\(0.0036)} \\
-        R-squared                     & 0.2028 & 0.2028 & 0.2028 & 0.2028    & 0.6370 \\
-        Coefficient estimates         & OLS    & OLS    & OLS    & OLS       & FM     \\
-        Standard errors               & White  & CL - F & CL - T & CL - F\&T & FM     \\
-        \bottomrule
-    \end{tabular}
-    \begin{tablenotes}[flushleft]
-        \footnotesize
-        \item
-        \textit{Note:} This table presents the regression results for different model specifications.
-        Column I shows the results using OLS with White standard errors.
-        Columns II, III, and IV show the results using OLS with clustered standard errors by firm, time, and both firm and time, respectively.
-        Column V presents the results using the Fama-MacBeth method.
-        The dependent variable is the market debt ratio.
-        The independent variables include log(firm\_age), log(market value of assets), market\_to\_book\_assets, profits\_to\_sales, tangible\_assets, advertising\_to\_sales, rd\_to\_sales, and rd\_positive.
-        Standard errors are reported in parentheses.
-        ** indicates significance at the 1\% level, and * indicates significance at the 5\% level.
-    \end{tablenotes}
+% -----------------------------------------------------------
+% Unobserved Heterogeneity
+% -----------------------------------------------------------
+\begin{longtable}{@{\extracolsep{\fill}}lcccc}
+    \caption{Unobserved heterogeneity}                                              \\
+    \toprule
+                                  & OLS                  & AdjY   & AvgE   & GFE    \\
+    \midrule
+    \endfirsthead
+    \caption[]{Unobserved heterogeneity (continued)}                                \\
+    \toprule
+                                  & OLS                  & AdjY   & AvgE   & GFE    \\
+    \midrule
+    \endhead
+    \midrule
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    ln\_firm\_age                 & \makecell{-0.0230***                            \\(0.0035)} & \makecell{0.0003 \\(0.0010)} & \makecell{-0.0006 \\(0.0010)} & \makecell{-0.0063 \\(0.0047)} \\
+    ln\_market\_value\_of\_assets & \makecell{0.0128***                             \\(0.0024)} & \makecell{0.0013*** \\(0.0005)} & \makecell{0.0017*** \\(0.0005)} & \makecell{0.0134*** \\(0.0041)} \\
+    market\_to\_book\_assets      & \makecell{-0.0547***                            \\(0.0033)} & \makecell{-0.0117*** \\(0.0012)} & \makecell{-0.0132*** \\(0.0013)} & \makecell{-0.0352*** \\(0.0031)} \\
+    profits\_to\_sales            & \makecell{-0.1050***                            \\(0.0394)} & \makecell{-0.0207**  \\(0.0083)} & \makecell{-0.0237*** \\(0.0083)} & \makecell{-0.0992**  \\(0.0432)} \\
+    tangible\_assets              & \makecell{0.0764***                             \\(0.0184)} & \makecell{-0.0041   \\(0.0034)} & \makecell{-0.0012   \\(0.0034)} & \makecell{-0.0278   \\(0.0346)} \\
+    advertising\_to\_sales        & \makecell{-0.1296                               \\(0.0908)} & \makecell{0.0728*** \\(0.0220)} & \makecell{0.0655*** \\(0.0223)} & \makecell{-0.1394   \\(0.1168)} \\
+    rd\_to\_sales                 & \makecell{-0.3548***                            \\(0.1255)} & \makecell{0.0237    \\(0.0347)} & \makecell{0.0101    \\(0.0350)} & \makecell{-0.1503   \\(0.2464)} \\
+    rd\_positive                  & \makecell{0.0053                                \\(0.0083)} & \makecell{0.0026    \\(0.0019)} & \makecell{0.0027    \\(0.0019)} & \makecell{0.0118    \\(0.0126)} \\
+    Observations                  & 10094                & 10094  & 10094  & 10094  \\
+    R-squared                     & 0.1827               & 0.0224 & 0.7301 & 0.0721 \\
 \end{longtable}
+{\parbox{\textwidth}{
+    \footnotesize
+    \textit{Note:} This table presents different model specifications examining unobserved heterogeneity.
+    Columns represent OLS, Adjusted Y (AdjY), Average Effects (AvgE), and Group Fixed Effects (GFE).
+    The dependent variable is the market debt ratio.
+    Independent variables include log(firm age), log(market value of assets), market-to-book assets, profits-to-sales, tangible assets, advertising-to-sales, R\&D-to-sales, and an indicator for positive R\&D.
+    Standard errors are in parentheses.
+    *** indicates significance at the 1\% level, ** at 5\%.
+}}
 
-\begin{longtable}{lcccc}
-    \small
-    \caption{Unobserved heterogeneity}
-    \begin{tabular}{lcccc}
-        \toprule
-                                      & OLS                  & AdjY   & AvgE   & GFE    \\
-        \midrule
-        ln\_firm\_age                 & \makecell{-0.0230***                            \\(0.0035)} & \makecell{0.0003 \\(0.0010)} & \makecell{-0.0006 \\(0.0010)} & \makecell{-0.0063 \\(0.0047)} \\
-        ln\_market\_value\_of\_assets & \makecell{0.0128***                             \\(0.0024)} & \makecell{0.0013*** \\(0.0005)} & \makecell{0.0017*** \\(0.0005)} & \makecell{0.0134*** \\(0.0041)} \\
-        market\_to\_book\_assets      & \makecell{-0.0547***                            \\(0.0033)} & \makecell{-0.0117*** \\(0.0012)} & \makecell{-0.0132*** \\(0.0013)} & \makecell{-0.0352*** \\(0.0031)} \\
-        profits\_to\_sales            & \makecell{-0.1050***                            \\(0.0394)} & \makecell{-0.0207** \\(0.0083)} & \makecell{-0.0237*** \\(0.0083)} & \makecell{-0.0992** \\(0.0432)} \\
-        tangible\_assets              & \makecell{0.0764***                             \\(0.0184)} & \makecell{-0.0041 \\(0.0034)} & \makecell{-0.0012 \\(0.0034)} & \makecell{-0.0278 \\(0.0346)} \\
-        advertising\_to\_sales        & \makecell{-0.1296                               \\(0.0908)} & \makecell{0.0728*** \\(0.0220)} & \makecell{0.0655*** \\(0.0223)} & \makecell{-0.1394 \\(0.1168)} \\
-        rd\_to\_sales                 & \makecell{-0.3548***                            \\(0.1255)} & \makecell{0.0237 \\(0.0347)} & \makecell{0.0101 \\(0.0350)} & \makecell{-0.1503 \\(0.2464)} \\
-        rd\_positive                  & \makecell{0.0053                                \\(0.0083)} & \makecell{0.0026 \\(0.0019)} & \makecell{0.0027 \\(0.0019)} & \makecell{0.0118 \\(0.0126)} \\
-        Observations                  & 10094                & 10094  & 10094  & 10094  \\
-        R-squared                     & 0.1827               & 0.0224 & 0.7301 & 0.0721 \\
-        \bottomrule
-    \end{tabular}
-    \begin{tablenotes}[flushleft]
-        \footnotesize
-        \item \textit{Note:} This table presents the regression results for different model specifications examining unobserved heterogeneity.
-        The columns represent different estimation methods: OLS, Adjusted Y (AdjY), Average Effects (AvgE), and Group Fixed Effects (GFE).
-        The dependent variable is the market debt ratio.
-        Independent variables include log(firm age), log(market value of assets), market-to-book assets, profits-to-sales, tangible assets, advertising-to-sales, R\&D-to-sales, and an indicator for positive R\&D.
-        Standard errors are reported in parentheses.
-        *** indicates significance at the 1\% level, and ** indicates significance at the 5\% level.
-    \end{tablenotes}
+% -----------------------------------------------------------
+% Replication of Table 7 of Petersen (2009)
+% -----------------------------------------------------------
+\begin{longtable}{@{\extracolsep{\fill}}lccccc}
+    \caption{Replication of Table 7 of Petersen (2009)}                           \\
+    \toprule
+                                  & I      & II     & III    & IV        & V      \\
+    \midrule
+    \endfirsthead
+    \caption[]{Replication of Table 7 of Petersen (2009) (continued)}             \\
+    \toprule
+                                  & I      & II     & III    & IV        & V      \\
+    \midrule
+    \endhead
+    \midrule
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    ln\_market\_value\_of\_assets &
+    \makecell{0.0004                                                              \\(0.0004)} &
+    \makecell{0.0004                                                              \\(0.0014)} &
+    \makecell{0.0004                                                              \\(0.0020)} &
+    \makecell{0.0004                                                              \\(0.0014)} &
+    \makecell{0.0197**                                                            \\(0.0010)} \\
+    ln\_firm\_age                 &
+    \makecell{0.0006                                                              \\(0.0008)} &
+    \makecell{0.0006                                                              \\(0.0022)} &
+    \makecell{0.0006                                                              \\(0.0046)} &
+    \makecell{0.0006                                                              \\(0.0022)} &
+    \makecell{0.0189**                                                            \\(0.0018)} \\
+    profits\_to\_sales            &
+    \makecell{0.1725**                                                            \\(0.0083)} &
+    \makecell{0.1725**                                                            \\(0.0253)} &
+    \makecell{0.1725**                                                            \\(0.0221)} &
+    \makecell{0.1725**                                                            \\(0.0248)} &
+    \makecell{0.2288**                                                            \\(0.0176)} \\
+    tangible\_assets              &
+    \makecell{0.1616**                                                            \\(0.0033)} &
+    \makecell{0.1616**                                                            \\(0.0109)} &
+    \makecell{0.1616**                                                            \\(0.0231)} &
+    \makecell{0.1616**                                                            \\(0.0106)} &
+    \makecell{0.1994**                                                            \\(0.0080)} \\
+    market\_to\_book\_assets      &
+    \makecell{-0.0776**                                                           \\(0.0009)} &
+    \makecell{-0.0776**                                                           \\(0.0024)} &
+    \makecell{-0.0776**                                                           \\(0.0020)} &
+    \makecell{-0.0776**                                                           \\(0.0024)} &
+    \makecell{-0.0627**                                                           \\(0.0022)} \\
+    advertising\_to\_sales        &
+    \makecell{-0.0560                                                             \\(0.0315)} &
+    \makecell{-0.0560                                                             \\(0.0879)} &
+    \makecell{-0.0560                                                             \\(0.0731)} &
+    \makecell{-0.0560                                                             \\(0.0878)} &
+    \makecell{-0.0165                                                             \\(0.0314)} \\
+    rd\_to\_sales                 &
+    \makecell{-0.1566**                                                           \\(0.0380)} &
+    \makecell{-0.1566                                                             \\(0.0938)} &
+    \makecell{-0.1566                                                             \\(0.0951)} &
+    \makecell{-0.1566                                                             \\(0.0932)} &
+    \makecell{-0.5242**                                                           \\(0.0682)} \\
+    rd\_positive                  &
+    \makecell{-0.0172**                                                           \\(0.0018)} &
+    \makecell{-0.0172**                                                           \\(0.0051)} &
+    \makecell{-0.0172**                                                           \\(0.0027)} &
+    \makecell{-0.0172**                                                           \\(0.0050)} &
+    \makecell{-0.0035                                                             \\(0.0043)} \\
+    R-squared                     & 0.3090 & 0.3090 & 0.3090 & 0.3090    & 0.6988 \\
+    Coefficient estimates         & OLS    & OLS    & OLS    & OLS       & FM     \\
+    Standard errors               & White  & CL - F & CL - T & CL - F\&T & FM     \\
 \end{longtable}
+{\parbox{\textwidth}{
+    \footnotesize
+    \textit{Note:} This table presents the regression results for different model specifications.
+    Columns I--IV show OLS with White standard errors, clustered by firm, time, and both, respectively.
+    Column V is Fama-MacBeth.
+    The dependent variable is the market debt ratio.
+    The independent variables include log(firm\_age), log(market value of assets), market\_to\_book\_assets, profits\_to\_sales, tangible\_assets, advertising\_to\_sales, rd\_to\_sales, and rd\_positive.
+    Standard errors are in parentheses.
+    ** indicates significance at the 1\% level.
+}}
 
-\begin{longtable}{lccccc}
-    \small
-    \caption{Replication of Table 7 of Petersen (2009)}
-    \begin{tabular}{lccccc}
-        \toprule
-                                      & I      & II     & III    & IV        & V      \\
-        \midrule
-        ln\_market\_value\_of\_assets &
-        \makecell{0.0004                                                              \\(0.0004)} &
-        \makecell{0.0004                                                              \\(0.0014)} &
-        \makecell{0.0004                                                              \\(0.0020)} &
-        \makecell{0.0004                                                              \\(0.0014)} &
-        \makecell{0.0197**                                                            \\(0.0010)} \\
-        ln\_firm\_age                 &
-        \makecell{0.0006                                                              \\(0.0008)} &
-        \makecell{0.0006                                                              \\(0.0022)} &
-        \makecell{0.0006                                                              \\(0.0046)} &
-        \makecell{0.0006                                                              \\(0.0022)} &
-        \makecell{0.0189**                                                            \\(0.0018)} \\
-        profits\_to\_sales            &
-        \makecell{0.1725**                                                            \\(0.0083)} &
-        \makecell{0.1725**                                                            \\(0.0253)} &
-        \makecell{0.1725**                                                            \\(0.0221)} &
-        \makecell{0.1725**                                                            \\(0.0248)} &
-        \makecell{0.2288**                                                            \\(0.0176)} \\
-        tangible\_assets              &
-        \makecell{0.1616**                                                            \\(0.0033)} &
-        \makecell{0.1616**                                                            \\(0.0109)} &
-        \makecell{0.1616**                                                            \\(0.0231)} &
-        \makecell{0.1616**                                                            \\(0.0106)} &
-        \makecell{0.1994**                                                            \\(0.0080)} \\
-        market\_to\_book\_assets      &
-        \makecell{-0.0776**                                                           \\(0.0009)} &
-        \makecell{-0.0776**                                                           \\(0.0024)} &
-        \makecell{-0.0776**                                                           \\(0.0020)} &
-        \makecell{-0.0776**                                                           \\(0.0024)} &
-        \makecell{-0.0627**                                                           \\(0.0022)} \\
-        advertising\_to\_sales        &
-        \makecell{-0.0560                                                             \\(0.0315)} &
-        \makecell{-0.0560                                                             \\(0.0879)} &
-        \makecell{-0.0560                                                             \\(0.0731)} &
-        \makecell{-0.0560                                                             \\(0.0878)} &
-        \makecell{-0.0165                                                             \\(0.0314)} \\
-        rd\_to\_sales                 &
-        \makecell{-0.1566**                                                           \\(0.0380)} &
-        \makecell{-0.1566                                                             \\(0.0938)} &
-        \makecell{-0.1566                                                             \\(0.0951)} &
-        \makecell{-0.1566                                                             \\(0.0932)} &
-        \makecell{-0.5242**                                                           \\(0.0682)} \\
-        rd\_positive                  &
-        \makecell{-0.0172**                                                           \\(0.0018)} &
-        \makecell{-0.0172**                                                           \\(0.0051)} &
-        \makecell{-0.0172**                                                           \\(0.0027)} &
-        \makecell{-0.0172**                                                           \\(0.0050)} &
-        \makecell{-0.0035                                                             \\(0.0043)} \\
-        R-squared                     & 0.3090 & 0.3090 & 0.3090 & 0.3090    & 0.6988 \\
-        Coefficient estimates         & OLS    & OLS    & OLS    & OLS       & FM     \\
-        Standard errors               & White  & CL - F & CL - T & CL - F\&T & FM     \\
-        \bottomrule
-    \end{tabular}
-    \begin{tablenotes}[flushleft]
-        \footnotesize
-        \item \textit{Note:} This table presents the regression results for different model specifications.
-        Columns I, II, III, and IV show the results using OLS with White standard errors, clustered standard errors by firm, time, and both firm and time, respectively.
-        Column V presents the results using the Fama-MacBeth method.
-        The dependent variable is the market debt ratio.
-        The independent variables include log(firm\_age), log(market value of assets), market\_to\_book\_assets, profits\_to\_sales, tangible\_assets, advertising\_to\_sales, rd\_to\_sales, and rd\_positive.
-        Standard errors are reported in parentheses.
-        ** indicates significance at the 1\% level.
-    \end{tablenotes}
+% -----------------------------------------------------------
+% Replication of Table 2 of Gormley and Matsa (2014)
+% -----------------------------------------------------------
+\begin{longtable}{@{\extracolsep{\fill}}lcccc}
+    \caption{Replication of Table 2 of Gormley and Matsa (2014)}               \\
+    \toprule
+                              & OLS                 & AdjY   & AvgE   & FE     \\
+    \midrule
+    \endfirsthead
+    \caption[]{Replication of Table 2 of Gormley and Matsa (2014) (continued)} \\
+    \toprule
+                              & OLS                 & AdjY   & AvgE   & FE     \\
+    \midrule
+    \endhead
+    \midrule
+    \endfoot
+    \bottomrule
+    \endlastfoot
+    Fixed Assets/Total Assets & \makecell{0.264***                             \\(0.037)} & \makecell{0.119*** \\(0.025)} & \makecell{0.204*** \\(0.022)} & \makecell{0.137*** \\(0.043)} \\
+    Ln(Sales)                 & \makecell{0.009***                             \\(0.001)} & \makecell{0.009*** \\(0.000)} & \makecell{0.009*** \\(0.000)} & \makecell{0.008*** \\(0.001)} \\
+    Return on Assets          & \makecell{-0.047***                            \\(0.005)} & \makecell{-0.034***\\(0.004)} & \makecell{-0.063***\\(0.004)} & \makecell{-0.071***\\(0.005)} \\
+    Z-score                   & \makecell{-0.010***                            \\(0.000)} & \makecell{-0.005***\\(0.000)} & \makecell{-0.009***\\(0.000)} & \makecell{-0.008***\\(0.000)} \\
+    Market-to-book Ratio      & \makecell{0.013***                             \\(0.001)} & \makecell{0.005*** \\(0.001)} & \makecell{0.015*** \\(0.000)} & \makecell{0.015*** \\(0.001)} \\
+    Observations              & 208262              & 208262 & 208262 & 208262 \\
+    R2                        & 0.30                & 0.13   & 0.37   & 0.26   \\
 \end{longtable}
-
-\begin{longtable}{lcccc}
-    \small
-    \caption{Replication of Table 2 of Gormley and Matsa (2014)}
-    \begin{tabular}{lcccc}
-        \toprule
-                                  & OLS                 & AdjY   & AvgE   & FE     \\
-        \midrule
-        Fixed Assets/Total Assets & \makecell{0.264***                             \\(0.037)} & \makecell{0.119*** \\(0.025)} & \makecell{0.204*** \\(0.022)} & \makecell{0.137*** \\(0.043)} \\
-        Ln(Sales)                 & \makecell{0.009***                             \\(0.001)} & \makecell{0.009*** \\(0.000)} & \makecell{0.009*** \\(0.000)} & \makecell{0.008*** \\(0.001)} \\
-        Return on Assets          & \makecell{-0.047***                            \\(0.005)} & \makecell{-0.034*** \\(0.004)} & \makecell{-0.063*** \\(0.004)} & \makecell{-0.071*** \\(0.005)} \\
-        Z-score                   & \makecell{-0.010***                            \\(0.000)} & \makecell{-0.005*** \\(0.000)} & \makecell{-0.009*** \\(0.000)} & \makecell{-0.008*** \\(0.000)} \\
-        Market-to-book Ratio      & \makecell{0.013***                             \\(0.001)} & \makecell{0.005*** \\(0.001)} & \makecell{0.015*** \\(0.000)} & \makecell{0.015*** \\(0.001)} \\
-        Observations              & 208262              & 208262 & 208262 & 208262 \\
-        R2                        & 0.30                & 0.13   & 0.37   & 0.26   \\
-        \bottomrule
-    \end{tabular}
-    \begin{tablenotes}[flushleft]
-        \footnotesize
-        \item \textit{Note:} This table presents the regression results for different model specifications.
-        The columns represent different estimation methods: OLS, Adjusted Y (AdjY), Average Effects (AvgE), and Fixed Effects (FE).
-        Standard errors are reported in parentheses.
-        *** indicates significance at the 1\% level.
-    \end{tablenotes}
-\end{longtable}
+{\parbox{\textwidth}{
+    \footnotesize
+    \textit{Note:} This table presents regression results for different model specifications.
+    Columns show OLS, Adjusted Y (AdjY), Average Effects (AvgE), and Fixed Effects (FE).
+    Standard errors are in parentheses.
+    *** indicates significance at the 1\% level.
+}}
 
 \end{document}

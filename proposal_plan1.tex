@@ -1,0 +1,64 @@
+\documentclass[a4paper, 10pt, authoryear]{elsarticle}
+
+\makeatletter
+\def\ps@pprintTitle{%
+  \let\@oddhead\relax
+  \let\@evenhead\relax
+  \let\@oddfoot\relax
+  \let\@evenfoot\relax
+}
+\makeatother
+
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{lineno}
+%\usepackage[backend=bibtex, style=authoryear, natbib=true]{biblatex} 
+%\addbibresource{proposal1.bib}
+%\usepackage[authoryear]{natbib}
+\bibliographystyle{elsarticle-harv}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\begin{document}
+\title{
+    How (and how much) do debtholders value their rights? \\
+    \large FIN9013 Empirical Corporate Finance Research Proposal
+}
+\author{Ang Zhang}
+
+% \begin{abstract}
+%     This proposal outlines a research plan for investigating the impact of corporate finance strategies on firm performance. The study will employ quantitative methods to analyze financial data from a sample of companies over a ten-year period. Key areas of focus include capital structure, dividend policy, and investment decisions. The findings are expected to provide insights into how financial management practices influence profitability and growth.
+% \end{abstract}
+
+\maketitle
+
+\section{Introduction}
+As the central question of agency conflicts, shareholders actively seek to improve their rights, mainly through corporate governance (\cite{gillanCorporateGovernanceProposals2000}). Equity investors value their rights and reflect this in their valuation of the firm, as studied in \cite{gompersCorporateGovernanceEquity2003}. However, debtholders' rights are less represented in corporate governance. Rather, the agency conflict between debtholders and management/shareholders is more often resolved through the design of debt contracts. Under the framework of the Agency Theory of Covenants (ATC), \cite{smithFinancialContracting1979} studied how bond covenants are designed to control the conflict between bondholders and stockholders. \cite{chavaManagerialAgencyBond2010} studied how management agency risk is reflected in bond covenants. \cite{diamondSeniorityMaturityDebt1993} studied how borrowers, who presumably have better information about their own prospects than lenders, can signal their creditworthiness by issuing debt with certain characteristics. \cite{lelandCorporateDebtValue1994a} developed a theoretical framework that analytically derived the debt value and yield spread incorporating a set of characteristics including bond covenants. \cite{bradleyStructurePricingCorporate2015} studied in a private debt setting (loans and private placements) how the structure and pricing of corporate debt are determined by the interaction of the borrower's credit risk and the lender's monitoring and control rights. But less attention has been paid to how public debtholders value their rights. As public debt market investors, corporate bond investors usually don't have a chance to discuss their rights directly with management. They are largely covenant takers. Pricing of bonds, which they have a say in, is possibly the only way they can value their rights. Recent developments in corporate bond asset pricing allow for better insights into priced and unpriced factors in corporate bonds. \cite{vanbinsbergenDurationBasedValuationCorporate2025} proposed a model to strip out factors from corporate bonds that are priced by the market, allowing for studies of the idiosyncratic risks that are priced. By looking at the priced credit risk of corporate bonds against covenant measures while controlling for a set of firm characteristics, we can infer how much corporate bond investors value their rights. This study aims to fill the gap in the literature by examining from a bondholder's perspective what they have to say on agency conflicts.
+
+\section{Methodologies}
+The proposed research will examine cross-sectional evidence on how bond covenants affect corporate bond credit spreads. Bond issuance and issuer data will come from FISD, firm fundamentals from Compustat, and bond pricing data from Openbondassetpricing.com, which is a website put together by a couple of researchers on corporate bond asset pricing. The research will compile a bondholder rights measure from provisions on bondholder protection, issuer restriction, and subsidiary restriction. As the same bondholder rights measure would bear different values for different firms, the interaction between the measure and firm characteristics will be accounted for, including credit rating, leverage ratio, Tobin's q, stock volatility, etc., to provide insights on how significant a part covenants can play in different firms. The study will also construct a matched group and treated group of firms with similar characteristics but different covenant measures, to further investigate the causal relationship between bondholder rights and bond credit spreads. Then, a subsample will be studied where the same issuer has multiple issuances of corporate bonds with different covenant provisions, to study the within-firm variation of bond credit spreads. As a robustness check, the study will control for unobserved heterogeneity with standard error clustering and fixed effects.
+
+\section{Expected Outcomes}
+The study aims to find how bondholders value their rights in corporate bond pricing. The results will provide insights into how much bondholders value their rights and how this value varies in firms with different characteristics. The findings will also inform managers about the trade-off between bondholder rights and bond financing costs, helping them make better financing decisions with agency conflicts in mind.
+
+\clearpage
+\bibliography{proposal1}
+
+\end{document}

@@ -1,0 +1,63 @@
+\begin{thebibliography}{8}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Bradley and Roberts(2015)}]{bradleyStructurePricingCorporate2015}
+\bibinfo{author}{Bradley, M.}, \bibinfo{author}{Roberts, M.R.}, \bibinfo{year}{2015}.
+\newblock \bibinfo{title}{The {{Structure}} and {{Pricing}} of {{Corporate Debt Covenants}}}.
+\newblock \bibinfo{journal}{Quarterly Journal of Finance} \bibinfo{volume}{05}, \bibinfo{pages}{1550001}.
+\newblock \DOIprefix\doi{10.1142/S2010139215500019}.
+%Type = Article
+\bibitem[{Chava et~al.(2010)Chava, Kumar and Warga}]{chavaManagerialAgencyBond2010}
+\bibinfo{author}{Chava, S.}, \bibinfo{author}{Kumar, P.}, \bibinfo{author}{Warga, A.}, \bibinfo{year}{2010}.
+\newblock \bibinfo{title}{Managerial {{Agency}} and {{Bond Covenants}}}.
+\newblock \bibinfo{journal}{The Review of Financial Studies} \bibinfo{volume}{23}, \bibinfo{pages}{1120--1148}.
+\newblock \href{http://arxiv.org/abs/40604782}{{\tt arXiv:40604782}}.
+%Type = Article
+\bibitem[{Diamond(1993)}]{diamondSeniorityMaturityDebt1993}
+\bibinfo{author}{Diamond, D.W.}, \bibinfo{year}{1993}.
+\newblock \bibinfo{title}{Seniority and maturity of debt contracts}.
+\newblock \bibinfo{journal}{Journal of Financial Economics} \bibinfo{volume}{33}, \bibinfo{pages}{341--368}.
+\newblock \DOIprefix\doi{10.1016/0304-405X(93)90011-Y}.
+%Type = Article
+\bibitem[{Gillan and Starks(2000)}]{gillanCorporateGovernanceProposals2000}
+\bibinfo{author}{Gillan, S.L.}, \bibinfo{author}{Starks, L.T.}, \bibinfo{year}{2000}.
+\newblock \bibinfo{title}{Corporate governance proposals and shareholder activism: The role of institutional investors}.
+\newblock \bibinfo{journal}{Journal of Financial Economics} \bibinfo{volume}{57}, \bibinfo{pages}{275--305}.
+\newblock \DOIprefix\doi{10.1016/S0304-405X(00)00058-1}.
+%Type = Article
+\bibitem[{Gompers et~al.(2003)Gompers, Ishii and Metrick}]{gompersCorporateGovernanceEquity2003}
+\bibinfo{author}{Gompers, P.}, \bibinfo{author}{Ishii, J.}, \bibinfo{author}{Metrick, A.}, \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Corporate {{Governance}} and {{Equity Prices}}}.
+\newblock \bibinfo{journal}{The Quarterly Journal of Economics} \bibinfo{volume}{118}, \bibinfo{pages}{107--155}.
+\newblock \href{http://arxiv.org/abs/25053900}{{\tt arXiv:25053900}}.
+%Type = Article
+\bibitem[{Leland(1994)}]{lelandCorporateDebtValue1994a}
+\bibinfo{author}{Leland, H.E.}, \bibinfo{year}{1994}.
+\newblock \bibinfo{title}{Corporate {{Debt Value}}, {{Bond Covenants}}, and {{Optimal Capital Structure}}}.
+\newblock \bibinfo{journal}{The Journal of Finance} \bibinfo{volume}{49}, \bibinfo{pages}{1213--1252}.
+\newblock \DOIprefix\doi{10.2307/2329184}, \href{http://arxiv.org/abs/2329184}{{\tt arXiv:2329184}}.
+%Type = Article
+\bibitem[{Smith and Warner(1979)}]{smithFinancialContracting1979}
+\bibinfo{author}{Smith, C.W.}, \bibinfo{author}{Warner, J.B.}, \bibinfo{year}{1979}.
+\newblock \bibinfo{title}{On financial contracting}.
+\newblock \bibinfo{journal}{Journal of Financial Economics} \bibinfo{volume}{7}, \bibinfo{pages}{117--161}.
+\newblock \DOIprefix\doi{10.1016/0304-405X(79)90011-4}.
+%Type = Article
+\bibitem[{Van~Binsbergen et~al.(2025)Van~Binsbergen, Nozawa and Schwert}]{vanbinsbergenDurationBasedValuationCorporate2025}
+\bibinfo{author}{Van~Binsbergen, J.H.}, \bibinfo{author}{Nozawa, Y.}, \bibinfo{author}{Schwert, M.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Duration-{{Based Valuation}} of {{Corporate Bonds}}}.
+\newblock \bibinfo{journal}{The Review of Financial Studies} \bibinfo{volume}{38}, \bibinfo{pages}{158--191}.
+\newblock \DOIprefix\doi{10.1093/rfs/hhae054}.
+
+\end{thebibliography}
