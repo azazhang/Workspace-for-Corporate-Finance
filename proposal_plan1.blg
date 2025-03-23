@@ -4,44 +4,44 @@ The top-level auxiliary file: proposal_plan1.aux
 The style file: elsarticle-harv.bst
 Database file #1: proposal1.bib
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 8 entries,
+You've used 9 entries,
             2990 wiz_defined-function locations,
-            701 strings with 6970 characters,
-and the built_in function-call counts, 5308 in all, are:
-= -- 442
-> -- 152
-< -- 5
-+ -- 61
-- -- 51
-* -- 573
-:= -- 763
-add.period$ -- 32
-call.type$ -- 8
-change.case$ -- 57
-chr.to.int$ -- 8
-cite$ -- 8
-duplicate$ -- 393
-empty$ -- 406
-format.name$ -- 77
-if$ -- 989
+            710 strings with 7217 characters,
+and the built_in function-call counts, 5877 in all, are:
+= -- 491
+> -- 162
+< -- 6
++ -- 65
+- -- 54
+* -- 627
+:= -- 846
+add.period$ -- 36
+call.type$ -- 9
+change.case$ -- 63
+chr.to.int$ -- 9
+cite$ -- 9
+duplicate$ -- 438
+empty$ -- 455
+format.name$ -- 81
+if$ -- 1098
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 73
-newline$ -- 63
-num.names$ -- 32
-pop$ -- 115
+missing$ -- 81
+newline$ -- 69
+num.names$ -- 36
+pop$ -- 127
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 54
 quote$ -- 0
-skip$ -- 115
+skip$ -- 130
 stack$ -- 0
-substring$ -- 298
-swap$ -- 281
+substring$ -- 334
+swap$ -- 310
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 72
+type$ -- 81
 warning$ -- 0
-while$ -- 39
+while$ -- 44
 width$ -- 0
-write$ -- 143
+write$ -- 159

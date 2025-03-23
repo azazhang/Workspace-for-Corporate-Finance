@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.13)  17 MAR 2025 19:01
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.13)  19 MAR 2025 19:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -547,27 +547,25 @@ LaTeX Font Info:    Trying to load font information for T1+pcr on input line 19.
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 ))
 
-[2
-
-] (./proposal_plan1.aux)
+[2] (./proposal_plan1.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 14068 strings out of 473190
- 222313 string characters out of 5715800
- 626248 words of memory out of 5000000
- 37092 multiletter control sequences out of 15000+600000
+ 14072 strings out of 473190
+ 222486 string characters out of 5715800
+ 629273 words of memory out of 5000000
+ 37095 multiletter control sequences out of 15000+600000
  577889 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,2738b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,5n,79p,2212b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on proposal_plan1.pdf (2 pages, 50048 bytes).
+Output written on proposal_plan1.pdf (2 pages, 52292 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
- 74 compressed objects within 1 object stream
- 15 named destinations out of 1000 (max. 500000)
+ 89 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 16 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,4 @@
+\beamer@sectionintoc {1}{Why M\&A happen}{3}{0}{1}
+\beamer@sectionintoc {2}{Methodologies}{11}{0}{2}
+\beamer@sectionintoc {3}{Empirical results}{20}{0}{3}
+\beamer@sectionintoc {4}{Discussion}{26}{0}{4}

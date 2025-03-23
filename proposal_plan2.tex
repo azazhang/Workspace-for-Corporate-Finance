@@ -1,0 +1,69 @@
+\documentclass[a4paper, 10pt, authoryear]{elsarticle}
+
+\makeatletter
+\def\ps@pprintTitle{%
+  \let\@oddhead\relax
+  \let\@evenhead\relax
+  \let\@oddfoot\relax
+  \let\@evenfoot\relax
+}
+\makeatother
+
+\usepackage{times}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage{multirow}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage{bookmark}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{rotating}
+\usepackage{lscape}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\usepackage{caption}
+\usepackage{setspace}
+\usepackage{lineno}
+%\usepackage[backend=bibtex, style=authoryear, natbib=true]{biblatex} 
+%\addbibresource{proposal1.bib}
+%\usepackage[authoryear]{natbib}
+\bibliographystyle{elsarticle-harv}
+\geometry{left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm}
+
+\begin{document}
+\title{
+    Human Capital Risk \\
+    \large FIN9013 Empirical Corporate Finance Research Proposal
+}
+\author{Ang Zhang}
+
+% \begin{abstract}
+%     This proposal outlines a research plan for investigating the impact of corporate finance strategies on firm performance. The study will employ quantitative methods to analyze financial data from a sample of companies over a ten-year period. Key areas of focus include capital structure, dividend policy, and investment decisions. The findings are expected to provide insights into how financial management practices influence profitability and growth.
+% \end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+"Not everything that can be counted counts, and not everything that counts can be counted." - William Bruce Cameron (1958)
+\newline
+People have long realized that organizational capital is a crucial component of firm assets that do not appear on the balance sheet. Some researches (\cite{iqbalBetterEstimateInternally2024}) try to come up a better estimate of intangile capital for consumers of financial statements. \cite{petersIntangibleCapitalInvestmentq2017} proposed a new Q measure that explicitly account for organizational capital in firm's performance measure. Although it's intangile, the return generated from intangile assets like organizational capital are tangible and are appreciated by investors in their valuation of the firm. Just like not all assets on balance sheet produce same ROA, not all organizational capital produce equal value nor do they share the same risk profile. Yet, investors explictly price organizational capital based on their own gauge of the quality of this piece of intangile asset.
+Some management studies like \cite{campbellWhoLeavesWhere2012} showed from organizational behavior perspective that employee mobility negatively impact performance in knowlege intensive sectors. However, attrition can be a very noisy measure of human capital risk and is not comparable across industries either.
+Studies have beening using textual analysis to compile risks that firms are exposed to from filings. For instance, \cite{florackisCybersecurityRisk2023} used textual analysis to compile cyber security risks that firms are exposed to from 10-Ks and 10-Qs filings.
+
+\section{Methodologies}
+The study will compile a human capital risk measure.
+The study will use a short-run event study to examine the SR CAR of firms in the event of positive and negative human capital event. Positive events include the appointment of a new CEO, the appointment of a new CFO, and the appointment of a new board member. Negative events include the resignation of a CEO, the resignation of a CFO, and the resignation of a board member. The study will use a long-run event study to examine the LR CAR of firms in the event of positive and negative human capital event. The study will use a cross-sectional regression to examine the relationship between human capital risk and firm performance. The study will use a panel regression to examine the relationship between human capital risk and firm performance over time.
+
+\section{Expected Outcomes}
+The study aims to find how bondholders value their rights in corporate bond pricing. The results will provide insights into how much bondholders value their rights and how this value varies in firms with different characteristics. The findings will also inform managers about the trade-off between bondholder rights and bond financing costs, helping them make better financing decisions with agency conflicts in mind.
+
+\bibliography{proposal2}
+
+\end{document}
