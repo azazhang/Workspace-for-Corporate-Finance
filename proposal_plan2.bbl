@@ -1,0 +1,56 @@
+\begin{thebibliography}{7}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Bennedsen et~al.(2020)Bennedsen, {P{\'e}rez-Gonz{\'a}lez} and Wolfenzon}]{bennedsenCEOsMatterEvidence2020}
+\bibinfo{author}{Bennedsen, M.}, \bibinfo{author}{{P{\'e}rez-Gonz{\'a}lez}, F.}, \bibinfo{author}{Wolfenzon, D.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Do {{CEOs Matter}}? {{Evidence}} from {{Hospitalization Events}}}.
+\newblock \bibinfo{journal}{The Journal of Finance} \bibinfo{volume}{75}, \bibinfo{pages}{1877--1911}.
+\newblock \DOIprefix\doi{10.1111/jofi.12897}.
+%Type = Article
+\bibitem[{Campbell et~al.(2012)Campbell, Ganco, Franco and Agarwal}]{campbellWhoLeavesWhere2012}
+\bibinfo{author}{Campbell, B.A.}, \bibinfo{author}{Ganco, M.}, \bibinfo{author}{Franco, A.M.}, \bibinfo{author}{Agarwal, R.}, \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{Who leaves, where to, and why worry? employee mobility, entrepreneurship and effects on source firm performance}.
+\newblock \bibinfo{journal}{Strategic Management Journal} \bibinfo{volume}{33}, \bibinfo{pages}{65--87}.
+\newblock \DOIprefix\doi{10.1002/smj.943}.
+%Type = Article
+\bibitem[{Florackis et~al.(2023)Florackis, Louca, Michaely and Weber}]{florackisCybersecurityRisk2023}
+\bibinfo{author}{Florackis, C.}, \bibinfo{author}{Louca, C.}, \bibinfo{author}{Michaely, R.}, \bibinfo{author}{Weber, M.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Cybersecurity {{Risk}}.}
+\newblock \bibinfo{journal}{Review of Financial Studies} \bibinfo{volume}{36}, \bibinfo{pages}{351--407}.
+\newblock \DOIprefix\doi{10.1093/rfs/hhac024}.
+%Type = Article
+\bibitem[{Iqbal et~al.(2024)Iqbal, Rajgopal, Srivastava and Zhao}]{iqbalBetterEstimateInternally2024}
+\bibinfo{author}{Iqbal, A.}, \bibinfo{author}{Rajgopal, S.}, \bibinfo{author}{Srivastava, A.}, \bibinfo{author}{Zhao, R.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{A {{Better Estimate}} of {{Internally Generated Intangible Capital}}}.
+\newblock \bibinfo{journal}{Management Science} , \bibinfo{pages}{mnsc.2022.01703}\DOIprefix\doi{10.1287/mnsc.2022.01703}.
+%Type = Article
+\bibitem[{Li et~al.(2022)Li, Lourie, Nekrasov and Shevlin}]{liEmployeeTurnoverFirm2022}
+\bibinfo{author}{Li, Q.}, \bibinfo{author}{Lourie, B.}, \bibinfo{author}{Nekrasov, A.}, \bibinfo{author}{Shevlin, T.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Employee {{Turnover}} and {{Firm Performance}}: {{Large-Sample Archival Evidence}}}.
+\newblock \bibinfo{journal}{Management Science} \bibinfo{volume}{68}, \bibinfo{pages}{5667--5683}.
+\newblock \DOIprefix\doi{10.1287/mnsc.2021.4199}.
+%Type = Article
+\bibitem[{Peters and Taylor(2017)}]{petersIntangibleCapitalInvestmentq2017}
+\bibinfo{author}{Peters, R.H.}, \bibinfo{author}{Taylor, L.A.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{Intangible capital and the investment-{\emph{q}} relation}.
+\newblock \bibinfo{journal}{Journal of Financial Economics} \bibinfo{volume}{123}, \bibinfo{pages}{251--272}.
+\newblock \DOIprefix\doi{10.1016/j.jfineco.2016.03.011}.
+%Type = Article
+\bibitem[{Sautner et~al.(2023)Sautner, Van~Lent, Vilkov and Zhang}]{sautnerFirmLevelClimateChange2023}
+\bibinfo{author}{Sautner, Z.}, \bibinfo{author}{Van~Lent, L.}, \bibinfo{author}{Vilkov, G.}, \bibinfo{author}{Zhang, R.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Firm-{{Level Climate Change Exposure}}}.
+\newblock \bibinfo{journal}{The Journal of Finance} \bibinfo{volume}{78}, \bibinfo{pages}{1449--1498}.
+\newblock \DOIprefix\doi{10.1111/jofi.13219}.
+
+\end{thebibliography}

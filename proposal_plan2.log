@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.13)  22 MAR 2025 21:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.13)  23 MAR 2025 20:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -538,45 +538,34 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 51.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
-Package natbib Warning: Citation `iqbalBetterEstimateInternally2024' on page 1 undefined on input line 56.
-
-
-Package natbib Warning: Citation `petersIntangibleCapitalInvestmentq2017' on page 1 undefined on input line 56.
-
-
-Package natbib Warning: Citation `campbellWhoLeavesWhere2012' on page 1 undefined on input line 57.
-
-
-Package natbib Warning: Citation `florackisCybersecurityRisk2023' on page 1 undefined on input line 58.
-
-No file proposal_plan2.bbl.
-
-Package natbib Warning: There were undefined citations.
-
-
-
 [1
 
 
-{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./proposal_plan2.aux)
+{/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2025/texmf-dist/fonts/enc/dvips/base/8r.enc}] (./proposal_plan2.bbl
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 19.
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+))
+
+[2] (./proposal_plan2.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 13982 strings out of 473190
- 220188 string characters out of 5715800
- 619902 words of memory out of 5000000
- 37024 multiletter control sequences out of 15000+600000
- 577268 words of font info for 56 fonts, out of 8000000 for 9000
+ 14066 strings out of 473190
+ 222065 string characters out of 5715800
+ 624355 words of memory out of 5000000
+ 37090 multiletter control sequences out of 15000+600000
+ 580737 words of font info for 60 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,5n,79p,1064b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
-Output written on proposal_plan2.pdf (1 page, 33569 bytes).
+ 75i,5n,79p,967b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2025/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2025/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on proposal_plan2.pdf (2 pages, 51853 bytes).
 PDF statistics:
- 37 PDF objects out of 1000 (max. 8388607)
- 29 compressed objects within 1 object stream
- 5 named destinations out of 1000 (max. 500000)
+ 84 PDF objects out of 1000 (max. 8388607)
+ 71 compressed objects within 1 object stream
+ 14 named destinations out of 1000 (max. 500000)
  25 words of extra memory for PDF output out of 10000 (max. 10000000)
 
